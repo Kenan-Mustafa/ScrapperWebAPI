@@ -26,7 +26,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet("all")]
-    public async Task<IActionResult> GetAll(string store)
+    public async Task<IActionResult> GetAll(string? store)
     {
         var list = new HashSet<ProductToListDto>();
 

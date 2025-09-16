@@ -6,7 +6,6 @@ public static class RootMapper
 {
     public static ProductToListDto MapToDto(Root root)
     {
-        // Root JSON-unun ilk obyektini götürürük
         var product = root?.product;
         if (product == null)
             return null;
@@ -16,7 +15,8 @@ public static class RootMapper
         return new ProductToListDto
         {
             Name = product.name,
-            Brand = product.brand?.brandGroupCode,
+            Brand = product.brand?.brandGroupCode??"",
+            Description = product.detail?.colors[0].description??"",
             Price = firstColor?.pricing?.price?.value ?? 0,
             DiscountedPrice = null,
             Colors = new List<ScrapperWebAPI.Models.ProductDtos.Color>

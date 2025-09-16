@@ -1685,12 +1685,7 @@ namespace ScrapperWebAPI.Models.Zara.Product
         public LiveTracking liveTracking { get; set; }
         public List<string> milestonesOrder { get; set; }
     }
-
-    public class TwinnedSku
-    {
-        public int sku { get; set; }
-        public string reference { get; set; }
-    }
+     
 
     public class UniversalLinks
     {
